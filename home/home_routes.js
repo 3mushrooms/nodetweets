@@ -8,10 +8,10 @@ module.exports = function(app) {
     //read
     app.get('/home', function(req, res) {
         async.parallel( {
-            tweet: function(callback) {
-                r({ uri: 'http://localhost:3001/tweet'}, function(error, response, body) {
+            tweets: function(callback) {
+                r({ uri: 'http://localhost:3001/tweets'}, function(error, response, body) {
                     if(error ) {
-                        callback({server: 'tweet', error: error});
+                        callback({server: 'tweets', error: error});
                         return;
                     };
                     if (!error && response.statusCode === 200) {
@@ -21,10 +21,23 @@ module.exports = function(app) {
                     }    
                 });
             },
-            user: function(callback) {
-                r({ uri: 'http://localhost:3000/user'}, function(error, response, body) {
+            users: function(callback) {
+                r({ uri: 'http://localhost:3000/users'}, function(error, response, body) {
                     if(error ) {
-                        callback({server: 'user', error: error});
+                        callback({server: 'users', error: error});
+                        return;
+                    };
+                    if (!error && response.statusCode === 200) {
+                        callback(null, body);
+                    } else {
+                        callback(response.statusCode);
+                    }    
+                });
+            }, 
+            followers: function(callback) {
+                r({ uri: 'http://localhost:3002/followers'}, function(error, response, body) {
+                    if(error ) {
+                        callback({server: 'followers', error: error});
                         return;
                     };
                     if (!error && response.statusCode === 200) {
