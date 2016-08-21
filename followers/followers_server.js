@@ -1,6 +1,8 @@
 var express = require('express')
 var app = express();
 var bodyParser = require('body-parser');
+var validator = require('express-validator');
+
 
 var mongoose = require('mongoose')
 //TODO: connection string can load from a config file
@@ -10,6 +12,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded( {
     extended: true
 }));
+app.use(validator());
 
 var followers = require('../followers/follower_routes.js')(app);
 
