@@ -1,3 +1,6 @@
+/*
+* Request file that makes requests to inner microsevices.
+*/
 var r = require('request').defaults( {
     json: true
 });
