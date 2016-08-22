@@ -183,7 +183,9 @@ run the following
 
 commands:
 ```forever start users/user_server.js```
+
 ```forever start tweets/tweet_server.js```
+
 ```forever start follower/follower_server.js```
 
 once all services above are running, you can either run home.js in the background
