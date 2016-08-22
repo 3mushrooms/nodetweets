@@ -122,8 +122,8 @@ send a [DELETE] request against the following endopoint:
 ```
 
 ###Get All Tweets
-Send a [GET] request to the following endpoint:
-```http://127.0.0.1:3001/tweets/```
+Send a [GET] request to the following 
+endpoint:```http://127.0.0.1:3001/tweets/```
 
 ####Get Tweets From Specific User
 send a [GET] request against the following endopoint:
