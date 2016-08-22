@@ -19,7 +19,7 @@ That being said, Each service is now running on its own server port ready to ser
 
 ##TODO:
 * Have the *home service* to pull list of tweets from followed users. 
-* When user is unfollowed, remove past tweets and stop future tweets to view on user's home page.
+* When user is unfollowed, remove past tweets and stop future tweets to view on user's home page.  
 * Add a **frontend** to this application.
 * Have each microserive run on its own docket container
 * Write build and deployment scripts
@@ -106,9 +106,59 @@ send a [GET] request against the following endopoint:
 for example:
 ```http://127.0.0.1:3000/users/ahmad```
 
-###Followers Microservice
- 
+####Delete a user
+send a [DELETE] request against the following endopoint:
+```http://127.0.0.1:3000/users/{username}```
+
 ###Tweets Microservice
+####POST a Tweet 
+[POST] to endpoint: ```http://127.0.0.1:3001/tweets```
+ payload:
+ ```
+ {
+    "username": "tamimi",
+    "tweet" : "What a great day! Time to hit the beaches.."
+}
+```
+
+###Get All Tweets
+Send a [GET] request to the following endpoint:
+```http://127.0.0.1:3001/tweets/```
+
+####Get Tweets From Specific User
+send a [GET] request against the following endopoint:
+```http://127.0.0.1:3001/tweets/{username}```
+for example:
+```http://127.0.0.1:3001/tweets/ahmad```
+
+###Followers Microservice
+####Follow user:
+to have ```ahmad``` follow ```pete``
+[POST] to endpoint: ```http://127.0.0.1:3002/followers```
+ payload:
+ ```
+ {
+    "username": "ahnmad",
+    "follower_username" : "pete"
+}
+```
+
+####Unfollow user:
+send a [DELETE] request to 
+endpoint: ```//http://127.0.0.1:3002/followers/{username}/users/{follower_username}```
+
+to have ```ahmad``` unfollow ```pete```
+issue a [DELETE] request to
+endpoint: ```//http://127.0.0.1:3002/followers/ahmad/users/pete```
+
+####Get all followed users
+Send a [GET] request to the following endpoint:
+```http://127.0.0.1:3002/followers/```
+
+####Get all followed users for a given username
+send a [GET] request against the following endopoint:
+```http://127.0.0.1:3002/followers/{username}```
+
 
 ##Run The application
 ### Install *forever**
@@ -120,9 +170,21 @@ run the following commands:
 ```forever start users/user_server.js```
 ```forever start tweets/tweet_server.js```
 ```forever start follower/follower_server.js```
-```forever start home.js```
 
-once all the above services are running, run
+once all services above are running, you can either run home.js in the background
+```forever start home.js```
+OR run it in the foreground
+```nodemon home.js``` 
+OR
+```node home.js```
+
+Once all services are up and running, create new user, create some tweets, follow some users, and then browse to ```/home``` endpoint to view home microservice orchestracting GET request to all core microservices:
+
+Browse to the following endpoint:
+```http://127.0.0.1:3005/home```
+
+
+
 
 
 
