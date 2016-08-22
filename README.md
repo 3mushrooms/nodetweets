@@ -139,7 +139,7 @@ for example: ``` http://127.0.0.1:3001/tweets/ahmad ```
 
 ###Followers Microservice
 ####Follow user:
-to have ```ahmad``` follow ```pete``
+to have ``` ahmad ``` follow ``` pete ```
 
 [POST] to endpoint: ``` http://127.0.0.1:3002/followers ```
 
@@ -153,6 +153,7 @@ payload:
 
 ####Unfollow user:
 send a [DELETE] request to 
+
 endpoint: ``` http://127.0.0.1:3002/followers/{username}/users/{follower_username} ```
 
 to have ``` ahmad ``` unfollow ``` pete ```
