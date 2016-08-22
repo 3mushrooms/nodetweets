@@ -23,16 +23,19 @@ module.exports = function(app) {
                     return;
                 };
                 if(tweet) {
-                    // user found!  do not allow duplicate.
-                    res.status(409).json({info: 'you have already tweeted this message.  Save the bandwidth, save earth!', data: tweet});
+                    // exact tweet was previously recorded!  do not allow duplicate.
+                    res.status(409).json({info: 'you have already tweeted this message.  Save storage, save earth!', data: tweet});
+                    return;
                 } else {     
                     var newTweet = new Tweet(req.body);
                     newTweet.save(function(err){
                         if(err) {
                             console.log(err);
                             res.status(500).json({info: 'error during user create', error: err});
+                            return;
                         };
                         res.status(201).json({info: 'tweet created successfully'});
+                        return;
                     });
                 }
             });
@@ -65,12 +68,13 @@ module.exports = function(app) {
             } else {
                 // No content found
                 res.status(204).json({info: 'tweet not found'});
+                return;
             }
         });
     });
 
     /*
-    //update
+    //TODO: update tweets in mongo
     app.put('/tweet/:id', function(req, res) {
         var index = _.findIndex (
             _tweets,
@@ -83,7 +87,7 @@ module.exports = function(app) {
     });
     
 
-    //delete
+    //TODO: support Delete
     app.delete('/tweet/:id', function(req, res) {
        Tweet.findOne({username: req.params.id}, function (err, tweet) {    
             if(err) {
