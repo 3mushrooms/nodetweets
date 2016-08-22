@@ -34,7 +34,7 @@ That being said, Each service is now running on its own server port ready to ser
 The following section will walk through different HTTP interactions with each microservice
 
 ###Login Microservice
-**/login** endpoint
+####User Login
 ```
 http://127.0.0.1:3000/login
 ```
@@ -131,16 +131,19 @@ Send a [GET] request to the following
 endpoint: ``` http://127.0.0.1:3001/tweets/ ```
 
 ####Get Tweets From Specific User
-send a [GET] request against the following endopoint:
-```http://127.0.0.1:3001/tweets/{username}```
-for example:
-```http://127.0.0.1:3001/tweets/ahmad```
+send a [GET] request against the following 
+
+endopoint: ``` http://127.0.0.1:3001/tweets/{username} ```
+
+for example: ``` http://127.0.0.1:3001/tweets/ahmad ```
 
 ###Followers Microservice
 ####Follow user:
 to have ```ahmad``` follow ```pete``
-[POST] to endpoint: ```http://127.0.0.1:3002/followers```
- payload:
+
+[POST] to endpoint: ``` http://127.0.0.1:3002/followers ```
+
+payload:
  ```
  {
     "username": "ahnmad",
@@ -150,28 +153,33 @@ to have ```ahmad``` follow ```pete``
 
 ####Unfollow user:
 send a [DELETE] request to 
-endpoint: ```//http://127.0.0.1:3002/followers/{username}/users/{follower_username}```
+endpoint: ``` http://127.0.0.1:3002/followers/{username}/users/{follower_username} ```
 
-to have ```ahmad``` unfollow ```pete```
+to have ``` ahmad ``` unfollow ``` pete ```
+
 issue a [DELETE] request to
-endpoint: ```//http://127.0.0.1:3002/followers/ahmad/users/pete```
+endpoint: ``` http://127.0.0.1:3002/followers/ahmad/users/pete ```
 
 ####Get all followed users
-Send a [GET] request to the following endpoint:
-```http://127.0.0.1:3002/followers/```
+Send a [GET] request to the following 
+
+endpoint: ``` http://127.0.0.1:3002/followers/ ```
 
 ####Get all followed users for a given username
-send a [GET] request against the following endopoint:
-```http://127.0.0.1:3002/followers/{username}```
+send a [GET] request against the following 
 
+endopoint: ``` http://127.0.0.1:3002/followers/{username} ```
 
 ##Run The application
 ### Install *forever**
-globally install forever using the following command:
-```npm install -g forever```
+globally install forever using the following 
+
+command: ``` npm install -g forever ```
 
 ### Run the Microservice
-run the following commands:
+run the following 
+
+commands:
 ```forever start users/user_server.js```
 ```forever start tweets/tweet_server.js```
 ```forever start follower/follower_server.js```
@@ -183,10 +191,11 @@ OR run it in the foreground
 OR
 ```node home.js```
 
-Once all services are up and running, create new user, create some tweets, follow some users, and then browse to ```/home``` endpoint to view home microservice orchestracting GET request to all core microservices:
+Once all services are up and running, create new user, create some tweets, follow some users, and then browse to ``` /home ``` endpoint to view home microservice orchestracting GET request to all core microservices:
 
-Browse to the following endpoint:
-```http://127.0.0.1:3005/home```
+Browse to the following 
+
+endpoint: ``` http://127.0.0.1:3005/home ```
 
 
 
