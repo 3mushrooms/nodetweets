@@ -39,13 +39,15 @@ The following section will walk through different HTTP interactions with each mi
 http://127.0.0.1:3000/login
 ```
 Using HTTP.POST, post the following *payload*
-```json
+```
 {
     username: "ahmad",
     password: "password"
-}``` 
-You 
+}
+``` 
 ###Users Microservice
+
+### Users Microservice
 
 ####Search users
 **/users/searches** endpoint
