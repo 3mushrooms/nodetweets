@@ -45,21 +45,37 @@ Using HTTP.POST, post the following *payload*
     password: "password"
 }
 ``` 
-###Users Microservice
-
 ### Users Microservice
 
+####Create new user
+endpoint: ```http://127.0.0.1:3000/users/```
+[POST] - payload :
+```
+{
+    "username": "tamimi",
+    "email" : "tamimi@3mushrooms.com",
+    "password" : "passwd"
+}
+```
+Result: Response Code: 201 CREATED
+```
+{
+  "info": "user created successfully"
+}
+```
+
 ####Search users
-**/users/searches** endpoint
-```http://127.0.0.1:3000/users/searches```
-Using HTTP.POST, post the following *payload*
+Searches is a resource, which is used to perform search operation on users. Send a POST request to searches resource to search for any user.
+
+endpoint:```http://127.0.0.1:3000/users/searches```
+[POST] - payload:
 ```
 {
     "username": "om"
 }
 ```
-Result:
-```json
+Result: Response Code: 200 OK
+```
 {
   "info": "search results for: om",
   "data": [
@@ -80,6 +96,15 @@ Result:
   ]
 }
 ```
+####Get All Users
+Send a [GET] request to the following endpoint:
+```http://127.0.0.1:3000/users/```
+
+####Get Specific User
+send a [GET] request against the following endopoint:
+```http://127.0.0.1:3000/users/{username}```
+for example:
+```http://127.0.0.1:3000/users/ahmad```
 
 ###Followers Microservice
  
