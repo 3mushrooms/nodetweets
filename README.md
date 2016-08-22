@@ -16,6 +16,7 @@ That being said, Each service is now running on its own server port ready to ser
 * Ability to call tweets service to view tweets from any given user 
 * Ability to search for users to follow using ```/users/searches``` resource
 * Ability to retrieve all tweets from a homepage.
+* Payloads Validation prior to processing requests
 
 ##TODO:
 * Have the *home service* to pull list of tweets from followed users. 
@@ -146,7 +147,7 @@ to have ``` ahmad ``` follow ``` pete ```
 payload:
  ```
  {
-    "username": "ahnmad",
+    "username": "ahmad",
     "follower_username" : "pete"
 }
 ```
