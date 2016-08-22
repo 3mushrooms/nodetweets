@@ -19,11 +19,11 @@ That being said, Each service is now running on its own server port ready to ser
 * Payloads Validation prior to processing requests
 
 ##TODO:
-* Add local unit Tests and use test framework like Mocha 
+* Upload local unit Tests and use test framework like Mocha 
 * Have the *home service* to pull list of tweets from followed users. 
 * When user is unfollowed, remove past tweets and stop future tweets to view on user's home page.  
 * Add a **frontend** to this application.
-* Have each microserive run on its own docket container
+* Have each microserive run on its own docker container
 * Write build and deployment scripts
 * Handle password Hash
 
