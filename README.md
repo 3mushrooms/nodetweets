@@ -49,10 +49,11 @@ You
 **/users/searches** endpoint
 ```http://127.0.0.1:3000/users/searches```
 Using HTTP.POST, post the following *payload*
-```json
+```
 {
     "username": "om"
-}```
+}
+```
 Result:
 ```json
 {
