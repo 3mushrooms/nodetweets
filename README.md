@@ -35,7 +35,9 @@ The following section will walk through different HTTP interactions with each mi
 
 ###Login Microservice
 **/login** endpoint
-```http://127.0.0.1:3000/login```
+```
+http://127.0.0.1:3000/login
+```
 Using HTTP.POST, post the following *payload*
 ```json
 {
