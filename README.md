@@ -68,6 +68,7 @@ Result: Response Code: 201 CREATED
 Searches is a resource, which is used to perform search operation on users. Send a POST request to searches resource to search for any user.
 
 endpoint: ```http://127.0.0.1:3000/users/searches```
+
 [POST] - payload:
 ```
 {
@@ -101,18 +102,21 @@ Send a [GET] request to the following
 endpoint: ``` http://127.0.0.1:3000/users/ ```
 
 ####Get Specific User
-send a [GET] request against the following endopoint:
-```http://127.0.0.1:3000/users/{username}```
-for example:
-```http://127.0.0.1:3000/users/ahmad```
+send a [GET] request against the following 
+
+endopoint: ```http://127.0.0.1:3000/users/{username} ```
+
+for example: ``` http://127.0.0.1:3000/users/ahmad ```
 
 ####Delete a user
-send a [DELETE] request against the following endopoint:
-```http://127.0.0.1:3000/users/{username}```
+send a [DELETE] request against the following 
+
+endopoint: ``` http://127.0.0.1:3000/users/{username} ```
 
 ###Tweets Microservice
 ####POST a Tweet 
 [POST] to endpoint: ```http://127.0.0.1:3001/tweets```
+ 
  payload:
  ```
  {
@@ -123,7 +127,8 @@ send a [DELETE] request against the following endopoint:
 
 ###Get All Tweets
 Send a [GET] request to the following 
-endpoint:```http://127.0.0.1:3001/tweets/```
+
+endpoint: ``` http://127.0.0.1:3001/tweets/ ```
 
 ####Get Tweets From Specific User
 send a [GET] request against the following endopoint:
