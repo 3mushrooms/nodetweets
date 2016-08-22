@@ -20,21 +20,79 @@ That being said, Each service is now running on its own server port ready to ser
 ##TODO:
 * Have the *home service* to pull list of tweets from followed users. 
 * When user is unfollowed, remove past tweets and stop future tweets to view on user's home page.
-* Add a FRONT END to this application.
+* Add a **frontend** to this application.
+* Have each microserive run on its own docket container
+* Write build and deployment scripts
+* Handle password Hash
 
- ##Architecutre Diagram:
+##Architecutre Diagram:
 
- ![Image of NodeTweets Microservice Architecutre]
- (https://github.com/3mushrooms/nodetweets/blob/master/assets/microservices_nodetweets.png)
+![Image of NodeTweets Microservice Architecutre]
+(https://github.com/3mushrooms/nodetweets/blob/master/assets/microservices_nodetweets.png)
 
- ##Core Microservices:
- The following section will walk through different HTTP interactions with each microservice
+##Core Microservices:
+The following section will walk through different HTTP interactions with each microservice
 
- ###Login Microservice
+###Login Microservice
+**/login** endpoint
+```http://127.0.0.1:3000/login```
+Using HTTP.POST, post the following *payload*
+```json
+{
+    username: "ahmad",
+    password: "password"
+}``` 
+You 
+###Users Microservice
+
+####Search users
+**/users/searches** endpoint
+```http://127.0.0.1:3000/users/searches```
+Using HTTP.POST, post the following *payload*
+```json
+{
+    "username": "om"
+}```
+Result:
+```json
+{
+  "info": "search results for: om",
+  "data": [
+    {
+      "_id": "57b92c871c659aad4aeef97f",
+      "username": "omar",
+      "email": "omar@3mushrooms.net",
+      "password": "3mushrooms",
+      "__v": 0
+    },
+    {
+      "_id": "57ba0f7a7e487ec16163a8fc",
+      "username": "Tom",
+      "email": "tom@3mushrooms.com",
+      "password": "tom1234",
+      "__v": 0
+    }
+  ]
+}
+```
+
+###Followers Microservice
  
- ###Users Microservice
+###Tweets Microservice
 
- ###Followers Microservice
- 
- ###Tweets Microservice
- 
+##Run The application
+### Install *forever**
+globally install forever using the following command:
+```npm install -g forever```
+
+### Run the Microservice
+run the following commands:
+```forever start users/user_server.js```
+```forever start tweets/tweet_server.js```
+```forever start follower/follower_server.js```
+```forever start home.js```
+
+once all the above services are running, run
+
+
+
