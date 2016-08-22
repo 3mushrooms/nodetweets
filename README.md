@@ -67,7 +67,7 @@ Result: Response Code: 201 CREATED
 ####Search users
 Searches is a resource, which is used to perform search operation on users. Send a POST request to searches resource to search for any user.
 
-endpoint:```http://127.0.0.1:3000/users/searches```
+endpoint: ```http://127.0.0.1:3000/users/searches```
 [POST] - payload:
 ```
 {
@@ -97,8 +97,8 @@ Result: Response Code: 200 OK
 }
 ```
 ####Get All Users
-Send a [GET] request to the following endpoint:
-```http://127.0.0.1:3000/users/```
+Send a [GET] request to the following 
+endpoint: ``` http://127.0.0.1:3000/users/ ```
 
 ####Get Specific User
 send a [GET] request against the following endopoint:
