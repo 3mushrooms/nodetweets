@@ -1,4 +1,3 @@
-//var _ = require('lodash')
 var Follower = require('../followers/follower_model.js')
 
 module.exports = function(app) {
@@ -51,7 +50,7 @@ module.exports = function(app) {
                 res.status(500).json({info: 'error during find users', error: err});
                 return;
             };
-            res.status(200).json({info: 'tweets found successfully', data: followers});
+            res.status(200).json({info: 'followers found successfully', data: followers});
         }); 
     });
     
