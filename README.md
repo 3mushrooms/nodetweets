@@ -32,7 +32,7 @@ That being said, Each service is now running on its own server port ready to ser
 ![Image of NodeTweets Microservice Architecutre]
 (https://github.com/3mushrooms/nodetweets/blob/master/assets/microservices_nodetweets.png)
 
-##Core Microservices:
+## Core Microservices:
 The following section will walk through different HTTP interactions with each microservice
 
 ### Login Microservice
@@ -66,7 +66,7 @@ Result: Response Code: 201 CREATED
 }
 ```
 
-####Search users
+#### Search users
 Searches is a resource, which is used to perform search operation on users. Send a POST request to searches resource to search for any user.
 
 endpoint: ```http://127.0.0.1:3000/users/searches```
