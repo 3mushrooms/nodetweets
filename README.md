@@ -7,7 +7,7 @@ That being said, Each service is now running on its own server port ready to ser
 * **home/home_routes.js** is the main request router that handles communications with different microservices.
 
 
-##Featueres
+## Featueres
 * All API are implemented using REST API principles
 * Simple Login simulation to demonstratre user service Login
 * Ability to post tweets
@@ -18,7 +18,7 @@ That being said, Each service is now running on its own server port ready to ser
 * Ability to retrieve all tweets from a homepage.
 * Payloads Validation prior to processing requests
 
-##TODO:
+## TODO:
 * Upload local unit Tests and use test framework like Mocha 
 * Have the *home service* to pull list of tweets from followed users. 
 * When user is unfollowed, remove past tweets and stop future tweets to view on user's home page.  
@@ -27,7 +27,7 @@ That being said, Each service is now running on its own server port ready to ser
 * Write build and deployment scripts
 * Handle password Hash
 
-##Architecutre Diagram:
+## Architecutre Diagram:
 
 ![Image of NodeTweets Microservice Architecutre]
 (https://github.com/3mushrooms/nodetweets/blob/master/assets/microservices_nodetweets.png)
@@ -35,8 +35,8 @@ That being said, Each service is now running on its own server port ready to ser
 ##Core Microservices:
 The following section will walk through different HTTP interactions with each microservice
 
-###Login Microservice
-####User Login
+### Login Microservice
+#### User Login
 ```
 http://127.0.0.1:3000/login
 ```
@@ -49,7 +49,7 @@ Using HTTP.POST, post the following *payload*
 ``` 
 ### Users Microservice
 
-####Create new user
+#### Create new user
 endpoint: ```http://127.0.0.1:3000/users/```
 [POST] - payload :
 ```
@@ -99,24 +99,24 @@ Result: Response Code: 200 OK
   ]
 }
 ```
-####Get All Users
+#### Get All Users
 Send a [GET] request to the following 
 endpoint: ``` http://127.0.0.1:3000/users/ ```
 
-####Get Specific User
+#### Get Specific User
 send a [GET] request against the following 
 
 endopoint: ```http://127.0.0.1:3000/users/{username} ```
 
 for example: ``` http://127.0.0.1:3000/users/ahmad ```
 
-####Delete a user
+#### Delete a user
 send a [DELETE] request against the following 
 
 endopoint: ``` http://127.0.0.1:3000/users/{username} ```
 
-###Tweets Microservice
-####POST a Tweet 
+### Tweets Microservice
+#### POST a Tweet 
 [POST] to endpoint: ```http://127.0.0.1:3001/tweets```
  
  payload:
@@ -127,20 +127,20 @@ endopoint: ``` http://127.0.0.1:3000/users/{username} ```
 }
 ```
 
-###Get All Tweets
+### Get All Tweets
 Send a [GET] request to the following 
 
 endpoint: ``` http://127.0.0.1:3001/tweets/ ```
 
-####Get Tweets From Specific User
+#### Get Tweets From Specific User
 send a [GET] request against the following 
 
 endopoint: ``` http://127.0.0.1:3001/tweets/{username} ```
 
 for example: ``` http://127.0.0.1:3001/tweets/ahmad ```
 
-###Followers Microservice
-####Follow user:
+### Followers Microservice
+#### Follow user:
 to have ``` ahmad ``` follow ``` pete ```
 
 [POST] to endpoint: ``` http://127.0.0.1:3002/followers ```
@@ -153,7 +153,7 @@ payload:
 }
 ```
 
-####Unfollow user:
+#### Unfollow user:
 send a [DELETE] request to 
 
 endpoint: ``` http://127.0.0.1:3002/followers/{username}/users/{follower_username} ```
@@ -163,17 +163,17 @@ to have ``` ahmad ``` unfollow ``` pete ```
 issue a [DELETE] request to
 endpoint: ``` http://127.0.0.1:3002/followers/ahmad/users/pete ```
 
-####Get all followed users
+#### Get all followed users
 Send a [GET] request to the following 
 
 endpoint: ``` http://127.0.0.1:3002/followers/ ```
 
-####Get all followed users for a given username
+#### Get all followed users for a given username
 send a [GET] request against the following 
 
 endopoint: ``` http://127.0.0.1:3002/followers/{username} ```
 
-##Run The application
+## Run The application
 ### Install *forever**
 globally install forever using the following 
 
